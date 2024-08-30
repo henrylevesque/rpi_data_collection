@@ -1,0 +1,11 @@
+pandas
+openpyxl
+pyserial
+pyaudio
+numpy
+os
+time
+datetime
+serial
+i2c-tools
+python3-smbus
