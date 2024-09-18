@@ -44,44 +44,49 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
     sudo apt-get install python3-pandas
     ```
     
-9. Create a new file for your code using a text editor. For example, you can use the following command to create a Python file named `my_code.py`:
+9. If you receive the following error while trying to install pandas: dpkg was interrupted, you must manually run sudo dpkg --configure -a to correct the problem.n error when trying to install pandas, run the following code as suggested:
+    ```
+    sudo dpkg --configure -a
+    ```
+
+10. Create a new file for your code using a text editor. For example, you can use the following command to create a Python file named `my_code.py`:
     ```
     nano my_code.py
     ```
 
-10. Write your code in the text editor. For example, you can add the following Python code to `my_code.py`:
+11. Write your code in the text editor. For example, you can add the following Python code to `my_code.py`:
     ```python
     cd /home/pi/my_python_projects
     python3 my_script.py
     ```
 
-11. Save and exit the text editor. In nano, you can press `Ctrl + X`, then `Y` to save the changes.
+12. Save and exit the text editor. In nano, you can press `Ctrl + X`, then `Y` to save the changes.
 
-12. Make the file executable by running the following command:
+13. Make the file executable by running the following command:
     ```
     chmod +x my_code.py
     ```
 
-13. Test your code by running it. For example, you can use the following command to execute `my_code.py`:
+14. Test your code by running it. For example, you can use the following command to execute `my_code.py`:
      ```
      python3 my_code.py
      ```
 
-14. If your code requires any dependencies, make sure to install them on the Raspberry Pi using tools like `pip` or `apt`.
+15. If your code requires any dependencies, make sure to install them on the Raspberry Pi using tools like `pip` or `apt`.
 
-15. To run the code headlessly on boot, add it to the Raspberry Pi's startup scripts. One common method is to use the `rc.local` file. Open the file using a text editor:
+16. To run the code headlessly on boot, add it to the Raspberry Pi's startup scripts. One common method is to use the `rc.local` file. Open the file using a text editor:
      ```
      sudo nano /etc/rc.local
      ```
 
-16. Add the following line before the `exit 0` line in the `rc.local` file, replacing `/path/to/my_code.py` with the actual path to your code file:
+17. Add the following line before the `exit 0` line in the `rc.local` file, replacing `/path/to/my_code.py` with the actual path to your code file:
      ```
      python3 /path/to/my_code.py &
      ```
 
-17. Save and exit the text editor. In nano, you can press `Ctrl + X`, then `Y` to save the changes.
+18. Save and exit the text editor. In nano, you can press `Ctrl + X`, then `Y` to save the changes.
 
-18. Reboot the Raspberry Pi for the changes to take effect:
+19. Reboot the Raspberry Pi for the changes to take effect:
      ```
      sudo reboot
      ```
