@@ -51,7 +51,8 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
 
 10. Write your code in the text editor. For example, you can add the following Python code to `my_code.py`:
     ```python
-    # Your code here
+    cd /home/pi/my_python_projects
+    python3 my_script.py
     ```
 
 11. Save and exit the text editor. In nano, you can press `Ctrl + X`, then `Y` to save the changes.
