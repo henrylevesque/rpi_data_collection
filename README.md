@@ -22,22 +22,20 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
 
 1. Connect to the Raspberry Pi Zero 2 W via SSH. Use a tool like PuTTY (Windows) or Terminal (Mac/Linux) to establish an SSH connection. Ensure that the Raspberry Pi is connected to the same network as your computer.
 
-2. Once connected, navigate to the desired directory where you want to add your code. For example, you can use the following command to navigate to the home directory:
+2. Once connected, navigate to the desired directory to add your code. For example, you can use the following command to navigate to the home directory:
     ```
     cd ~
     ```
 
 3. Clone the repository using the following command:
     ```
-    git clone https://github.com/your-username/your-repository.git
-    ```
-    Replace `your-username` with your GitHub username and `your-repository` with the name of your repository.
+    git clone https://github.com/hleve/rpi_data_collection.git
+
 
 4. After the cloning process is complete, navigate into the cloned repository directory:
     ```
-    cd your-repository
+    cd rpi_data_collection
     ```
-    Replace `your-repository` with the actual name of your repository.
 
 5. Install any required dependencies mentioned in the repository's documentation before running any code.
 
