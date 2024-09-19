@@ -49,44 +49,21 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
     sudo dpkg --configure -a
     ```
 
-10. Create a new file for your code using a text editor. For example, you can use the following command to create a Python file named `my_code.py`:
-    ```
-    nano my_code.py
-    ```
+## To run headlessly on boot
 
-11. Write your code in the text editor. For example, you can add the following Python code to `my_code.py`:
-    ```python
-    cd /home/pi/my_python_projects
-    python3 my_script.py
-    ```
-
-12. Save and exit the text editor. In nano, you can press `Ctrl + X`, then `Y` to save the changes.
-
-13. Make the file executable by running the following command:
-    ```
-    chmod +x my_code.py
-    ```
-
-14. Test your code by running it. For example, you can use the following command to execute `my_code.py`:
-     ```
-     python3 my_code.py
-     ```
-
-15. If your code requires any dependencies, make sure to install them on the Raspberry Pi using tools like `pip` or `apt`.
-
-16. To run the code headlessly on boot, add it to the Raspberry Pi's startup scripts. One common method is to use the `rc.local` file. Open the file using a text editor:
+1. To run the code headlessly on boot, add it to the Raspberry Pi's startup scripts. One common method is to use the `rc.local` file. Open the file using a text editor:
      ```
      sudo nano /etc/rc.local
      ```
 
-17. Add the following line before the `exit 0` line in the `rc.local` file, replacing `/path/to/my_code.py` with the actual path to your code file:
+2. Add the following line before the `exit 0` line in the `rc.local` file, replacing `/path/to/my_code.py` with the actual path to your code file:
      ```
      python3 /path/to/my_code.py &
      ```
 
-18. Save and exit the text editor. In nano, you can press `Ctrl + X`, then `Y` to save the changes.
+3. Save and exit the text editor. In nano, you can press `Ctrl + X`, then `Y` to save the changes.
 
-19. Reboot the Raspberry Pi for the changes to take effect:
+4. Reboot the Raspberry Pi for the changes to take effect:
      ```
      sudo reboot
      ```
@@ -99,7 +76,7 @@ Install the necessary libraries:
 pip install pandas openpyxl
 ```
 
-Create a systemd service to run the script on boot:
+Create a system service to run the script on boot:
 ```
 sudo nano /etc/systemd/system/data_collection.service
 ```
