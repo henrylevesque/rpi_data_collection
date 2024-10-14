@@ -1,7 +1,9 @@
-## This is very much a work in progress
+## Open Source Raspberry Pi Based Data Collection
+This is an open-source project for Data Collection based on low-cost Raspberry Pi single-board computers, low-cost sensor modules, 3D-printed housings, and Python code to generate human-readable data in the form of Excel (.xls) or Comma-Separated Values (.csv) files.
 
 ## Goal
-Python-based code for collecting data on Raspberry Pi Zero 2 W from external sensors and writing it to an internal microSD card as an Excel file. The code should start on boot to enable immediate data collection when the Raspberry Pi is turned on.
+Python-based code for collecting data on Raspberry Pi Zero 2 W from external sensors and writing it to an internal microSD card as an Excel file. 
+The code could be run either on boot to enable immediate data collection when the Raspberry Pi is turned on, or through a simple shell command.
 
 This device can be used as a modular biometric and environmental data collection device or as a standalone data collection device.
 
