@@ -11,14 +11,17 @@ Enclosures for the device will be uploaded on Printables.com with appropriate li
 
 The emphasis is on making the entire project as user-friendly and accessible as possible.
 
-## Sensors and Modules
-- GPS Sensor Module: Provides geotagging data for mapping in GIS applications.
+## Supported Sensors and Modules
+- GPS Module: Provides geotagging data for mapping in GIS applications.
 - Camera Module: Collects environmental data and facial data for later use with computer vision analysis.
+- Battery Module: PiSugar battery that enables wireless operation of the data collection device.
+
+## Future Sensors and Modules
 - Microphone Module: Measures environmental noise levels for noise pollution data collection.
 - Thermometer Module: Measures environmental heat levels for heat island data collection.
-- Battery Module: Enables wireless operation of the data collection device.
+- Heartrate Sensor: Measures heart rate to detect stress for biometric data collection.
 
-## Directions
+### Directions
 
 To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps:
 
@@ -51,7 +54,7 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
     sudo dpkg --configure -a
     ```
 
-## To run headlessly on boot
+###To run headlessly on boot
 
 1. To run the code headlessly on boot, add it to the Raspberry Pi's startup scripts. One common method is to use the `rc.local` file. Open the file using a text editor:
      ```
@@ -72,7 +75,7 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
 
 After the reboot, your code should run automatically on boot, enabling data collection to begin as soon as the Raspberry Pi is turned on.
 
-## Directions to Run on Boot
+### Directions to Run on Boot
 Install the necessary libraries:
 ```
 pip install pandas openpyxl
