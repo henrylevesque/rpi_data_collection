@@ -5,7 +5,7 @@ authors:
   given-names: "Henry"
   orcid: "https://orcid.org/0009-0008-5636-1143"
 title: "rpi_data_collection"
-version: 1.0.0
+version: 0.0.2-alpha
 doi: 10.5281/zenodo.13937153
 date-released: 2024-10-11
 url: "https://github.com/hleve/rpi_data_collection"
