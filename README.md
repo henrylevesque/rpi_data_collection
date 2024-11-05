@@ -53,6 +53,21 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
     ```
     sudo dpkg --configure -a
     ```
+10. Install requirements.txt
+    ```
+    sudo apt-get install requirements.txt
+    ```
+    
+## To run from terminal or SSH
+
+1. Navigate to the directory
+    ```
+    cd rpi_data_collection
+    ```
+2. Run the Python file
+    ```
+    python3 collect_camera_gps.py
+    ```
 
 ###To run headlessly on boot
 
