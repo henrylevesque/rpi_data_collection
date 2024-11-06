@@ -68,6 +68,9 @@ def read_gps_data(gps_serial):
             if latitude and longitude:
                 print(f"Latitude: {latitude}, Longitude: {longitude}")
                 return latitude, longitude
+            else:
+                print("Failed to parse GPS data")
+                return None, None
         except Exception as e:
             print(f"Error reading GPS data: {e}")
             return None, None
@@ -99,7 +102,7 @@ def run_data_collection(duration_minutes):
             latitude, longitude = read_gps_data(gps_serial)
 
             # Store the data
-            if latitude and longitude:
+            if latitude is not None and longitude is not None:
                 # Capture image
                 image_name = f"{image_dir}/image_{timestamp}.jpg"
                 capture_image(image_name)
