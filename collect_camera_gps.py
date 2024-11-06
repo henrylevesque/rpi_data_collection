@@ -89,14 +89,16 @@ def export_to_excel(data):
 def run_data_collection(duration_minutes):
     duration_seconds = duration_minutes * 60
     start_time = time.time()
+    
+    # Create a new directory for images with the current timestamp
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    image_dir = f"images_{timestamp}"
+    os.makedirs(image_dir, exist_ok=True)
+    
     try:
         while time.time() - start_time < duration_seconds:
             # Get timestamp
             timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-
-            # Create a new directory for images with the current timestamp
-            image_dir = f"images_{timestamp}"
-            os.makedirs(image_dir, exist_ok=True)
 
             # Capture GPS data
             latitude, longitude = read_gps_data(gps_serial)
