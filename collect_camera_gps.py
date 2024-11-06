@@ -20,8 +20,12 @@ print("Enabled Camera")
 
 # Setup GPS communication
 
+try:
 gps_serial = serial.Serial("/dev/serial0", baudrate=9600, timeout=1)
 print("gps port opened successfully")
+except serial.SerialException as e:
+    print(f"Error opening GPS serial port: {e}")
+    gps_serial = None
 
 
 # Data storage
