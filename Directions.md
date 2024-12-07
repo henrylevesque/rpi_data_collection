@@ -6,33 +6,42 @@ This project involves setting up a Raspberry Pi Zero 2 W with various sensors an
 
 ### Electronics
 
-1. **Raspberry Pi Zero 2 W** $14.99*
-   - [Amazon Link](https://www.amazon.com/Raspberry-Zero-Bluetooth-RPi-2W/dp/B09LH5SBPS/ref=sr_1_7_mod_primary_new?dib=eyJ2IjoiMSJ9.YpJ_uz8f2a2oiYBmYfY-KXyJx9gjGguipTg5z4c3B1dxKU_nsAhuoWv5kPLTdgm8EEUwpYl4YWW-but8qoNGsLbnU5FXpkX6KvkK03J_7vK_7GpWpN3HpzoGr_9fRCCtuPCEySyrJSBq4rABWO3tsMeP1-nh4FcBnGXZpGYP7OB0CbxI8O5DJK1hahCBg1bdHveA5oDseGrpkEOlJdfLYZddwwR1WofhPYw2KiAJiEY.d8fQd5Z1mbCXw-sPaIi5LGrtFk4AkFV-2K66v7j7YVo&dib_tag=se&keywords=pi+sugar&qid=1729268619&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=8-7)
+1. **Raspberry Pi Zero 2 W** $21.39*
+   - [Amazon Link](https://amzn.to/4g1tJDt)
    - Description: The main computing unit for the project.
 
 2. **Pi Sugar Battery** $27.99*
-   - [Amazon Link](https://www.amazon.com/gp/product/B097RC8KLQ/ref=ewc_pr_img_1?smid=A3801D113D15XA&psc=1)
+   - [Amazon Link](https://amzn.to/3Bfh68Q)
    - Description: A battery module to power the Raspberry Pi Zero 2 W.
 
-3. **Raspberry Pi Camera** $6.99*
-   - [Amazon Link](https://www.amazon.com/Arducam-Megapixels-Sensor-OV5647-Raspberry/dp/B012V1HEP4/ref=sr_1_2?crid=2KL5YGPG8Q4NW&dib=eyJ2IjoiMSJ9.SdZxeeuAaWgC9GeoeEJUFBozzUuUN17_d6zZwLikZtPYDjQUn6dWxFBsYTT5PgGx-ZQAvmzh0ryObxxe9oqy8cxZlfjvOQEprbwuhXlJzo4K5WXGmWj9A2w7qCzYa3F8rWhwJz2GQgX-Uu4Q5f3Nw3jqBlT4vSTPPxlQLtiStH9Ljhy8_G6H4IPJsIjWJ0ngv39lyD3sWtNoIUKUir6pL_UVf6T72di3b0QmsUKNxG4.VqLz1Lf0I91DDn4XDfhhBQqxfWzN39zsXXb7cNzd6p8&dib_tag=se&keywords=rpi+camera&qid=1729268149&sprefix=rpi+camer%2Caps%2C147&sr=8-2)
+3. **Raspberry Pi Camera** $14.99*
+   - [Amazon Link](https://amzn.to/3OImMv1)
    - Description: A camera module for capturing images and videos.
 
 4. **GPS Module** $12.99*
-   - [Amazon Link](https://www.amazon.com/Microcontroller-Compatible-Sensitivity-Navigation-Positioning/dp/B07P8YMVNT/ref=sr_1_3_pp?crid=2S5EEF4HVRFHB&dib=eyJ2IjoiMSJ9._7tC9nQUH8Baoer8dfHdfzH0fux2zbMlrpdyLSSvj5PmRsorWoWSRWOpiwNJ9eWPERk0NRGv227tB664AFDn5FmLFAknOUPp_nCJ8PYpwnrM4xFab4cjZrXXZFkObmGFWnyDUbsiJhh9rybSd3my9HxdmnQvCSqNjzsuetnFniDQ0Lbo3qtUaGa_WJhSFKHslV2L3_wgdUdlt28moQ17IMTW6zioIWoa5dQ5BIki5HI.2XaWev6R_AQSAK0_8P0FzDXilX2lsuYBdEi3lXssiNg&dib_tag=se&keywords=gps+modules&qid=1729268123&sprefix=gps+modules%2Caps%2C184&sr=8-3)
+   - [Amazon Link](https://amzn.to/3ZJtesd)
    - Description: A GPS module for obtaining location data.
 
 5. **Dupont Wires** $6.98*
-   - [Amazon Link](https://www.amazon.com/Elegoo-EL-CP-004-Multicolored-Breadboard-arduino/dp/B01EV70C78/ref=sr_1_3_pp?dib=eyJ2IjoiMSJ9.tjHxIQLJsk16_0YVtUGN6Tqnr8euWNsWVjpSaq5RQkbh1diS28delYC7eeKu_CWDAMtiY9YshknfdiNxU4HOXz5cRIbYlMNaRHh8AqkuszXxBbXkNVgJjhz43vfnU5MfQ3kAf56wl61_1Wey5Aj_Fo9MHuLIBE_Z2iMXdwSLo0Nkuz1buzrLmQRphkKu_pm3tB9SIJurCJPa1uh5t2Yb6JBUwICubTP3Da_XcYwgRag.r8tjqXjnMu4z5Z-ummBDBNGqqBG__tT9m6K783wwutc&dib_tag=se&keywords=dupont+wire&qid=1729268080&sr=8-3)
+   - [Amazon Link](https://amzn.to/41my284)
    - Description: Wires to connect the GPS module to the Raspberry Pi Zero 2 W.
    - Optional if you have your own wires, and includes enough wires for multiple devices or modules.
    
   ## Total Cost
-   - $69.94*
+   - $84.34*
    *at time of writing
 
 
 ### 3D Printed Parts
+
+**PLA** $23.99*
+   - [Amazon Link](https://amzn.to/41sJKhz)
+   - Description: Recommended filament for 3D printing and prototyping. PLA is best for interior use or prototyping because of its low toxicity and UV resistance.
+
+**ASA** $25.99*
+   - [Amazon Link](https://amzn.to/3VsVY61)
+   - Description: Recommended filament for final prints or exterior use. ASA has a higher UV resistance for exterior use but does not connect well with PLA parts.
+
 
 1. **Raspberry Pi Housing**
    - [Download STL file](link)
@@ -90,3 +99,6 @@ This project involves setting up a Raspberry Pi Zero 2 W with various sensors an
 You should now have a fully assembled and functional Raspberry Pi Zero 2 W Data Collection Device with all the required sensors and modules. If you encounter any issues, please post your question in the project discussion section or contact the authors.
 
 Happy data collection!
+
+####
+Note: Purchasing links on this page may be affiliate links that help support this project.
