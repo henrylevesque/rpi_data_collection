@@ -68,60 +68,6 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
     ```
     python3 collect_camera_gps.py
     ```
-
-###To run headlessly on boot
-
-1. To run the code headlessly on boot, add it to the Raspberry Pi's startup scripts. One common method is to use the `rc.local` file. Open the file using a text editor:
-     ```
-     sudo nano /etc/rc.local
-     ```
-
-2. Add the following line before the `exit 0` line in the `rc.local` file, replacing `/path/to/my_code.py` with the actual path to your code file:
-     ```
-     python3 /path/to/my_code.py &
-     ```
-
-3. Save and exit the text editor. In nano, you can press `Ctrl + X`, then `Y` to save the changes.
-
-4. Reboot the Raspberry Pi for the changes to take effect:
-     ```
-     sudo reboot
-     ```
-
-After the reboot, your code should run automatically on boot, enabling data collection to begin as soon as the Raspberry Pi is turned on.
-
-### Directions to Run on Boot
-Install the necessary libraries:
-```
-pip install pandas openpyxl
-```
-
-Create a system service to run the script on boot:
-```
-sudo nano /etc/systemd/system/data_collection.service
-```
-
-Add the following content:
-```
-[Unit]
-Description=Data Collection Service
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/python3 /path/to/data_collection.py
-WorkingDirectory=/path/to/
-StandardOutput=inherit
-StandardError=inherit
-Restart=always
-User=pi
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Enable and start the service:
-```
-sudo systemctl enable data_collection.service
 sudo systemctl start data_collection.service
 ```
 
