@@ -68,8 +68,6 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
     ```
     python3 collect_camera_gps.py
     ```
-sudo systemctl start data_collection.service
-```
 
 ## License
 This project is licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
