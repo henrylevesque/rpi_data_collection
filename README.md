@@ -11,6 +11,14 @@ Enclosures for the device will be uploaded on Printables.com with appropriate li
 
 The emphasis is on making the entire project as user-friendly and accessible as possible.
 
+### Organization and Usage
+- collect_camera_gps.py
+    - runs the gps and camera module data collection sequence
+- camera_only.py
+    - runs the camera module data collection sequence without gps data
+- fake_gps.py
+    - runs the gps and camera module data collection sequence with filler data for the gps
+
 ## Supported Sensors and Modules
 - GPS Module: Provides geotagging data for mapping in GIS applications.
 - Camera Module: Collects environmental data and facial data for later use with computer vision analysis.
@@ -42,7 +50,7 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
     cd rpi_data_collection
     ```
 
-6. Install Requirements and Pandas
+6. Install Requirements and Pandas (might require a virtual environment or venv)
     ```
     python3 -m venv .venv source .venv/bin/activate python3 -m pip install -r requirements.txt cd rpi_data_collection
   
