@@ -1,5 +1,5 @@
 # Open Source Raspberry Pi Based Data Collection
-This is an open-source project for Data Collection based on low-cost Raspberry Pi single-board computers, low-cost sensor modules, 3D-printed housings, and Python code to generate human-readable data in the form of Excel (.xls) or Comma-Separated Values (.csv) files.
+This is an open-source project for Data Collection based on low-cost Raspberry Pi single-board computers, low-cost sensor modules, 3D-printed housings, and Python code to generate human-readable data in the form of spreadsheets, either Excel (.xls) or Comma-Separated Values (.csv) files.
 
 ## Goal
 Python-based code for collecting data on Raspberry Pi Zero 2 W from external sensors and writing it to an internal microSD card as an Excel file. 
@@ -22,6 +22,46 @@ File organization and Directions for how to use specific configurations.
 
 ### To Collect Both Camera and GPS Data
 Run [collect_camera_gps.py](collect_camera_gps.py) to run the gps module and camera module data collection sequence
+
+### Hardware Configuration
+```mermaid
+graph LR;
+A[Battery Module] --> R[Raspberry Pi Zero]
+R <--> B[Camera Module]
+R <--> C[GPS Module]
+```
+### Directions
+
+1. Navigate to the directory
+    ```
+    cd rpi_data_collection
+    ```
+2. Run the Python file
+    ```
+    python3 collect_camera_gps.py
+
+### To Collect Only Camera Data
+Run [camera_only.py](camera_only.py) to run the camera module data collection sequence
+
+### Hardware Configuration
+```mermaid
+graph LR;
+A[Battery Module] --> R[Raspberry Pi Zero]
+R <--> B[Camera Module]
+```
+### Directions
+
+1. Navigate to the directory
+    ```
+    cd rpi_data_collection
+    ```
+2. Run the Python file
+    ```
+    python3 camera_only.py
+
+### To Collect Camera Data while inputing filler GPS Data
+Run [fake_gps.py](fake_gps.py) to run the gps module and camera module data collection sequence with filler data for the GPS
+
 ### Hardware Configuration
 ```mermaid
 graph LR;
@@ -38,12 +78,7 @@ R <--> C[GPS Module]
     ```
 2. Run the Python file
     ```
-    python3 collect_camera_gps.py
-
-- camera_only.py
-    - runs the camera module data collection sequence without gps data
-- fake_gps.py
-    - runs the gps and camera module data collection sequence with filler data for the gps
+    python3 fake_gps.py
 
 ## Sensors and Modules
 
