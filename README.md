@@ -20,7 +20,7 @@ For 3D printable enclosures: [3D Files](./3D%20Files/) or in a collection on [Pr
 ## Python File Explanation and Directions
 File organization and Directions for how to use specific configurations.
 
-### To Collect Camera and GPS Data
+### To Collect Both Camera and GPS Data
 Run [collect_camera_gps.py](collect_camera_gps.py) to run the gps module and camera module data collection sequence
 ### Hardware Configuration
 ```mermaid
