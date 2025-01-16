@@ -1,35 +1,63 @@
-## Open Source Raspberry Pi Based Data Collection
+# Open Source Raspberry Pi Based Data Collection
 This is an open-source project for Data Collection based on low-cost Raspberry Pi single-board computers, low-cost sensor modules, 3D-printed housings, and Python code to generate human-readable data in the form of Excel (.xls) or Comma-Separated Values (.csv) files.
 
 ## Goal
 Python-based code for collecting data on Raspberry Pi Zero 2 W from external sensors and writing it to an internal microSD card as an Excel file. 
-The code could be run either on boot to enable immediate data collection when the Raspberry Pi is turned on, or through a simple shell command.
+The code can be run through a simple terminal command outlined below.
 
 This device can be used as a modular biometric and environmental data collection device or as a standalone data collection device.
 
-Enclosures for the device will be uploaded on Printables.com with appropriate links.
+The goal of this project is on making the entire process as user-friendly and accessible as possible.
 
-The emphasis is on making the entire project as user-friendly and accessible as possible.
+## Navigation
 
-### Organization and Usage
-- collect_camera_gps.py
-    - runs the gps and camera module data collection sequence
+For first time setup: [Directions for First Time Setup](#directions-for-first-time-setup)
+
+For information on Modules: [Sensors and Modules](#sensors-and-modules)
+
+For 3D printable enclosures: [3D Files](./3D%20Files/) or in a collection on [Printables.com](https://www.printables.com/@HenryLevesque/collections/1649941)
+
+## Python File Explanation and Directions
+File organization and Directions for how to use specific configurations.
+
+### To Collect Camera and GPS Data
+Run [collect_camera_gps.py](collect_camera_gps.py) to run the gps module and camera module data collection sequence
+### Hardware Configuration
+```mermaid
+graph LR;
+A[Battery Module] --> R[Raspberry Pi Zero]
+R <--> B[Camera Module]
+R <--> C[GPS Module]
+```
+
+### Directions
+
+1. Navigate to the directory
+    ```
+    cd rpi_data_collection
+    ```
+2. Run the Python file
+    ```
+    python3 collect_camera_gps.py
+
 - camera_only.py
     - runs the camera module data collection sequence without gps data
 - fake_gps.py
     - runs the gps and camera module data collection sequence with filler data for the gps
 
-## Supported Sensors and Modules
+## Sensors and Modules
+
+### Supported Sensors and Modules
 - GPS Module: Provides geotagging data for mapping in GIS applications.
 - Camera Module: Collects environmental data and facial data for later use with computer vision analysis.
 - Battery Module: PiSugar battery that enables wireless operation of the data collection device.
 
-## Future Sensors and Modules
+### Future Sensors and Modules
 - Microphone Module: Measures environmental noise levels for noise pollution data collection.
 - Thermometer Module: Measures environmental heat levels for heat island data collection.
 - Heartrate Sensor: Measures heart rate to detect stress for biometric data collection.
 
-### Directions
+## Directions for First Time Setup
 
 To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps:
 
@@ -66,7 +94,7 @@ To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps
     sudo apt-get install requirements.txt
     ```
     
-## To run from terminal or SSH
+### To run from terminal or SSH
 
 1. Navigate to the directory
     ```
