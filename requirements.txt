@@ -1,3 +1,4 @@
+Adafruit_DHT
 pandas
 openpyxl
 pyserial
@@ -9,3 +10,5 @@ datetime
 serial
 i2c-tools
 python3-smbus
+picamera2
+gps

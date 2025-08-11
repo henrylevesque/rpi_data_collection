@@ -18,8 +18,14 @@ This project involves setting up a Raspberry Pi Zero 2 W with various sensors an
 4. **GPS Module** $12.99*
    - Description: A GPS module for obtaining location data.
 
-5. **Dupont Wires** $6.98*
-   - Description: Wires to connect the GPS module to the Raspberry Pi Zero 2 W.
+5. **Temperature/Humidity Sensor (DHT22 or DHT11)** $5-10*
+   - Description: Measures ambient temperature and humidity. Connects to a GPIO pin on the Raspberry Pi.
+
+6. **Air Quality Sensor (e.g., MQ-135, PMS5003, or similar)** $10-30*
+   - Description: Measures air quality parameters such as particulate matter, VOCs, or CO2. Connects via GPIO, UART, or I2C depending on model.
+
+7. **Dupont Wires** $6.98*
+   - Description: Wires to connect sensors and modules to the Raspberry Pi Zero 2 W.
    - Optional if you have your own wires, and includes enough wires for multiple devices or modules.
    
   ## Total Cost
@@ -55,6 +61,44 @@ This project involves setting up a Raspberry Pi Zero 2 W with various sensors an
 3. If you do not have access to a 3D printer, you can use a local 3D printing service such as a local makerspace, or an online print service such as Xometry.com or Shapeways.com
 
 ### Step 2: Assemble the Electronics
+---
+#### Wiring Diagrams
+
+**DHT11/DHT22 Temperature & Humidity Sensor**
+
+```
+   DHT11/DHT22         Raspberry Pi GPIO
+   +-----------+      +------------------+
+   |   VCC     +------+ 3.3V or 5V       |
+   |   DATA    +------+ GPIO4 (or other) |
+   |   GND     +------+ GND              |
+   +-----------+      +------------------+
+```
+
+**GPS Module (UART)**
+
+```
+   GPS Module         Raspberry Pi GPIO
+   +--------+         +------------------+
+   |   VCC  +---------+ 3.3V or 5V       |
+   |   TX   +---------+ RX (GPIO15)      |
+   |   RX   +---------+ TX (GPIO14)      |
+   |   GND  +---------+ GND              |
+   +--------+         +------------------+
+```
+
+**Camera Module (Raspberry Pi Camera)**
+
+```
+   Camera Ribbon Cable
+   +------------------+
+   | Connect to CSI   |
+   | port on Pi       |
+   +------------------+
+```
+
+---
+If you use a different air quality sensor, refer to its datasheet for wiring. Most connect via UART, I2C, or analog pins (may require ADC).
 1. **Raspberry Pi Zero 2 W**
    - Insert the Pi Sugar Battery into the Raspberry Pi Zero 2 W.
    - Place the Raspberry Pi into its 3D printed housing.
@@ -66,6 +110,18 @@ This project involves setting up a Raspberry Pi Zero 2 W with various sensors an
 3. **GPS Module**
    - Connect the GPS module to the Raspberry Pi via the GPIO pins.
    - Place the GPS module into its 3D printed housing.
+
+4. **Temperature/Humidity Sensor (DHT22 or DHT11)**
+   - Connect the sensor's VCC pin to a 3.3V or 5V pin on the Raspberry Pi (check your sensor's requirements).
+   - Connect the GND pin to a ground (GND) pin on the Raspberry Pi.
+   - Connect the DATA pin to a free GPIO pin (e.g., GPIO4). Note the pin number for your software configuration.
+   - Place the sensor in its housing or mount it securely.
+
+5. **Air Quality Sensor**
+   - Refer to your sensor's datasheet for wiring instructions. Most air quality sensors connect via GPIO, UART, or I2C.
+   - For UART/I2C sensors, connect the appropriate pins to the Raspberry Pi (e.g., TX/RX for UART, SDA/SCL for I2C).
+   - For analog sensors, you may need an ADC (analog-to-digital converter) module.
+   - Place the sensor in its housing or mount it securely.
 
 ### Step 3: Software Setup
 1. Clone this repository to your Raspberry Pi:

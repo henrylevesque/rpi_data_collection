@@ -20,65 +20,25 @@ For 3D printable enclosures: [3D Files](./3D%20Files/) or in a collection on [Pr
 ## Python File Explanation and Directions
 File organization and Directions for how to use specific configurations.
 
-### To Collect Both Camera and GPS Data
-Run [collect_camera_gps.py](collect_camera_gps.py) to run the gps module and camera module data collection sequence
+### Python Files Overview
 
-### Hardware Configuration
-```mermaid
-graph LR;
-A[Battery Module] --> R[Raspberry Pi Zero]
-R <--> B[Camera Module]
-R <--> C[GPS Module]
-```
-### Directions
+#### camera.py
+Collects data using only the camera module. Use this for image/video data collection without GPS.
 
-1. Navigate to the directory
+#### camera_gps.py
+Collects data using both the camera and GPS modules. Use this for synchronized image/video and location data collection.
+
+### How to Run
+
+1. Navigate to the directory:
     ```
     cd rpi_data_collection
     ```
-2. Run the Python file
+2. Run the desired Python file:
     ```
-    python3 collect_camera_gps.py
-
-### To Collect Only Camera Data
-Run [camera_only.py](camera_only.py) to run the camera module data collection sequence
-
-### Hardware Configuration
-```mermaid
-graph LR;
-A[Battery Module] --> R[Raspberry Pi Zero]
-R <--> B[Camera Module]
-```
-### Directions
-
-1. Navigate to the directory
+    python3 camera.py        # For camera-only data collection
+    python3 camera_gps.py    # For camera + GPS data collection
     ```
-    cd rpi_data_collection
-    ```
-2. Run the Python file
-    ```
-    python3 camera_only.py
-
-### To Collect Camera Data while inputing filler GPS Data
-Run [fake_gps.py](fake_gps.py) to run the gps module and camera module data collection sequence with filler data for the GPS
-
-### Hardware Configuration
-```mermaid
-graph LR;
-A[Battery Module] --> R[Raspberry Pi Zero]
-R <--> B[Camera Module]
-R <--> C[GPS Module]
-```
-
-### Directions
-
-1. Navigate to the directory
-    ```
-    cd rpi_data_collection
-    ```
-2. Run the Python file
-    ```
-    python3 fake_gps.py
 
 ## Sensors and Modules
 
@@ -88,9 +48,11 @@ R <--> C[GPS Module]
 - Battery Module: PiSugar battery that enables wireless operation of the data collection device.
 
 ### Future Sensors and Modules
+- Temperature/Humidity Sensor: Measures ambient temperature and humidity for environmental monitoring.
+- Air Quality Sensor: Measures air quality parameters (e.g., particulate matter, VOCs, CO2) for pollution and health studies.
 - Microphone Module: Measures environmental noise levels for noise pollution data collection.
-- Thermometer Module: Measures environmental heat levels for heat island data collection.
 - Heartrate Sensor: Measures heart rate to detect stress for biometric data collection.
+- Additional Air Quality Sensors: For more advanced pollution and health monitoring.
 
 ## Directions for First Time Setup
 
