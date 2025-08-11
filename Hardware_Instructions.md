@@ -7,23 +7,18 @@ This project involves setting up a Raspberry Pi Zero 2 W with various sensors an
 ### Electronics
 
 1. **Raspberry Pi Zero 2 W** $21.39*
-   - [Amazon Link](https://amzn.to/4g1tJDt)
    - Description: The main computing unit for the project.
 
 2. **Pi Sugar Battery** $27.99*
-   - [Amazon Link](https://amzn.to/3Bfh68Q)
    - Description: A battery module to power the Raspberry Pi Zero 2 W.
 
 3. **Raspberry Pi Camera** $14.99*
-   - [Amazon Link](https://amzn.to/3OImMv1)
    - Description: A camera module for capturing images and videos.
 
 4. **GPS Module** $12.99*
-   - [Amazon Link](https://amzn.to/3ZJtesd)
    - Description: A GPS module for obtaining location data.
 
 5. **Dupont Wires** $6.98*
-   - [Amazon Link](https://amzn.to/41my284)
    - Description: Wires to connect the GPS module to the Raspberry Pi Zero 2 W.
    - Optional if you have your own wires, and includes enough wires for multiple devices or modules.
    
@@ -35,25 +30,22 @@ This project involves setting up a Raspberry Pi Zero 2 W with various sensors an
 ### 3D Printed Parts
 
 **PLA** $23.99*
-   - [Amazon Link](https://amzn.to/41sJKhz)
    - Description: Recommended filament for 3D printing and prototyping. PLA is best for interior use or prototyping because of its low toxicity and UV resistance.
 
 **ASA** $25.99*
-   - [Amazon Link](https://amzn.to/3VsVY61)
    - Description: Recommended filament for final prints or exterior use. ASA has a higher UV resistance for exterior use but does not connect well with PLA parts.
 
 
 1. **Raspberry Pi Housing**
-   - [Download STL file](link)
    - Description: A custom housing for the Raspberry Pi Zero 2 W and Pi Sugar Battery.
 
 2. **Camera Housing**
-   - [Download STL file](link)
    - Description: A custom housing for the Raspberry Pi Camera module.
 
 3. **GPS Housing**
-   - [Download STL file](link)
    - Description: A custom housing for the GPS module.
+
+**Note:** The most up-to-date 3D printable models for all housings and components can be found at: [https://www.printables.com/@HenryLevesque/collections/1649941](https://www.printables.com/@HenryLevesque/collections/1649941)
 
 ## Assembly Instructions
 
@@ -101,4 +93,4 @@ You should now have a fully assembled and functional Raspberry Pi Zero 2 W Data 
 Happy data collection!
 
 ####
-Note: Purchasing links on this page may be affiliate links that help support this project.
+Note: Amazon purchase links have been removed. STL files for 3D printing are available on Printables.com. Please source electronics from your preferred supplier.

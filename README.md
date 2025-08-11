@@ -94,51 +94,121 @@ R <--> C[GPS Module]
 
 ## Directions for First Time Setup
 
-To add code to a Raspberry Pi Zero 2 W and run it headlessly, follow these steps:
+## Step-by-Step Setup for Beginners
 
-1. Connect to the Raspberry Pi Zero 2 W via SSH. Use a tool like PuTTY (Windows) or Terminal (Mac/Linux) to establish an SSH connection. Ensure that the Raspberry Pi is connected to the same network as your computer.
+### 1. Flashing the microSD Card with Raspberry Pi OS
 
-2. Once connected, navigate to the desired directory to add your code. For example, you can use the following command to navigate to the home directory:
+1. Download and install [Raspberry Pi Imager](https://www.raspberrypi.com/software/) on your computer.
+2. Insert your microSD card into your computer.
+3. Open Raspberry Pi Imager and select "Raspberry Pi OS (32-bit)" as the operating system.
+4. Click the gear icon (⚙️) or "Edit settings" before writing the image:
+    - Set a hostname (e.g., `rpi-data`)
+    - Enable SSH (choose "Enable SSH" and set a password)
+    - Set username and password (default: `pi` / `raspberry`)
+    - Configure WiFi:
+      - Enter your WiFi SSID (network name) and password
+      - **Tip:** Institutional WiFi (e.g., university/corporate) often does not work reliably with Raspberry Pi. Instead, use a personal hotspot from your laptop or smartphone. See below for hotspot setup.
+    - Set locale, timezone, and keyboard layout if needed
+5. Click "Save" and then "Write" to flash the microSD card.
+6. Safely eject the microSD card and insert it into your Raspberry Pi Zero.
+
+### 2. Setting Up a Personal Hotspot (Recommended)
+
+#### Smartphone Hotspot
+1. On your phone, go to Settings > Network & Internet > Hotspot & tethering (Android) or Settings > Personal Hotspot (iPhone).
+2. Turn on the hotspot and set a simple WiFi name (SSID) and password.
+3. Enter these credentials in Raspberry Pi Imager when flashing the SD card.
+
+#### Laptop Hotspot (Windows)
+1. Go to Settings > Network & Internet > Mobile hotspot.
+2. Turn on "Mobile hotspot" and set the network name and password.
+3. Enter these credentials in Raspberry Pi Imager when flashing the SD card.
+
+### 3. Powering and Finding Your Raspberry Pi
+
+1. Insert the flashed microSD card into your Raspberry Pi Zero and power it on.
+2. Wait 1-2 minutes for it to boot and connect to WiFi.
+3. Find the Pi's IP address:
+    - Check your hotspot device for connected devices
+    - Use a network scanner app (e.g., Fing)
+    - If you set a hostname, try: `ping rpi-data.local` from your computer
+
+### 4. Connecting to the Raspberry Pi via SSH
+
+1. Open Terminal:
+    - On **Windows 10/11**: Use the built-in Windows Terminal or Command Prompt (no need to install PuTTY unless you prefer it)
+    - On **Mac**: Use the built-in Terminal app
+    - On **Linux**: Use your system's Terminal
+2. Connect using:
     ```
-    cd ~
+    ssh pi@<raspberrypi_ip_address>
     ```
+    - Replace `<raspberrypi_ip_address>` with the actual IP address or hostname
+    - Enter the password you set in Raspberry Pi Imager
+    - **Note:** PuTTY is an alternative SSH client for Windows, but most users can use Windows Terminal or Command Prompt without installing extra software.
 
-3. Clone the repository using the following command:
+### 5. Cloning the Repository to Your Raspberry Pi
+
+1. Once connected via SSH, update your Pi:
+    ```
+    sudo apt-get update
+    sudo apt-get upgrade
+    ```
+2. Install git:
+    ```
+    sudo apt-get install git
+    ```
+3. Clone the repository:
     ```
     git clone https://github.com/hleve/rpi_data_collection.git
-
-
-4. After the cloning process is complete, navigate into the cloned repository directory:
-    ```
     cd rpi_data_collection
     ```
 
-6. Install Requirements and Pandas (might require a virtual environment or venv)
+### 6. (Optional but Recommended) Create and Activate a Python Virtual Environment
+
+1. Install Python 3 and venv if not already installed:
     ```
-    python3 -m venv .venv source .venv/bin/activate python3 -m pip install -r requirements.txt cd rpi_data_collection
-  
+    sudo apt-get install python3 python3-venv
+    ```
+2. Create and activate the virtual environment:
+    ```
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+
+### 7. Install Required Python Packages
+
+1. Upgrade pip and install requirements:
+    ```
+    python3 -m pip install --upgrade pip
+    python3 -m pip install -r requirements.txt
+    ```
+2. If you see errors about missing system packages (e.g., pandas), install them:
+    ```
     sudo apt-get install python3-pandas
     ```
-    
-9. If you receive the following error while trying to install pandas: dpkg was interrupted, you must manually run sudo dpkg --configure -a to correct the problem.n error when trying to install pandas, run the following code as suggested:
+3. If you see a dpkg error (e.g., "dpkg was interrupted"), run:
     ```
     sudo dpkg --configure -a
     ```
-10. Install requirements.txt
-    ```
-    sudo apt-get install requirements.txt
-    ```
-    
-### To run from terminal or SSH
 
-1. Navigate to the directory
+### 8. Running the Data Collection Code
+
+1. Navigate to the project directory:
     ```
     cd rpi_data_collection
     ```
-2. Run the Python file
+2. Run the Python file:
     ```
     python3 collect_camera_gps.py
     ```
+
+---
+If you need to copy only specific files (not the whole repo), you can use `scp` from your computer:
+```sh
+scp <local_file_path> pi@<raspberrypi_ip_address>:~/rpi_data_collection/
+```
+Replace `<local_file_path>` with the path to your file and `<raspberrypi_ip_address>` with your Pi's IP address.
 
 ## License
 This project is licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
