@@ -11,22 +11,28 @@ Supported temperature/humidity sensors:
 
 Requirements:
     - Adafruit_DHT (for temperature/humidity)
-    - picamera2 (for camera, libcamera Python bindings)
+    - libcamera-still (for camera, command-line tool)
     - gps (for GPS)
     - Ensure hardware is connected and libraries are installed
 """
 import time
+import time
 import Adafruit_DHT
-from picamera2 import Picamera2
 import gps
-
+import subprocess
 
 # Sensor setup
 # Change SENSOR to Adafruit_DHT.DHT11 if using DHT11
 SENSOR = Adafruit_DHT.DHT22
 GPIO_PIN = 4  # Change if your sensor is on a different pin
-camera = Picamera2()
 session = gps.gps(mode=gps.WATCH_ENABLE)
+
+def capture_image(image_path):
+    try:
+        subprocess.run(["libcamera-still", "-o", image_path, "--width", "1920", "--height", "1080"], check=True)
+        print(f"Image saved to {image_path}")
+    except subprocess.CalledProcessError as e:
+        print(f"Error capturing image: {e}")
 
 print("Starting data collection: camera, GPS, temperature/humidity...")
 try:
@@ -40,10 +46,7 @@ try:
 
         # Camera (capture image)
         image_path = f"image_{int(time.time())}.jpg"
-        camera.start()
-        camera.capture_file(image_path)
-        camera.stop()
-        print(f"Image captured: {image_path}")
+        capture_image(image_path)
 
         # GPS
         report = next(session, None)

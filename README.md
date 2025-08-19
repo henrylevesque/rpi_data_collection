@@ -22,6 +22,9 @@ File organization and Directions for how to use specific configurations.
 
 ### Python Files Overview
 
+#### collect_all.py
+Collects data using the camera (via libcamera-still), GPS, and temperature/humidity sensors. Use this for full environmental and location data collection.
+
 #### camera.py
 Collects data using only the camera module. Use this for image/video data collection without GPS.
 
@@ -36,8 +39,9 @@ Collects data using both the camera and GPS modules. Use this for synchronized i
     ```
 2. Run the desired Python file:
     ```
-    python3 camera.py        # For camera-only data collection
-    python3 camera_gps.py    # For camera + GPS data collection
+    python3 camera.py         # For camera-only data collection
+    python3 camera_gps.py     # For camera + GPS data collection
+    python3 collect_all.py    # For camera + GPS + temperature/humidity data collection
     ```
 
 ## Sensors and Modules
@@ -149,7 +153,11 @@ Collects data using both the camera and GPS modules. Use this for synchronized i
     ```
     sudo apt-get install python3-pandas
     ```
-3. If you see a dpkg error (e.g., "dpkg was interrupted"), run:
+3. The camera scripts use the `libcamera-still` command-line tool (not picamera or picamera2). This is included by default on Raspberry Pi OS Bullseye and later. If you have issues, run:
+    ```
+    sudo apt-get install libcamera-apps
+    ```
+4. If you see a dpkg error (e.g., "dpkg was interrupted"), run:
     ```
     sudo dpkg --configure -a
     ```
