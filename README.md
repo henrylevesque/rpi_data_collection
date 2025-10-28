@@ -13,8 +13,6 @@ The goal of this project is on making the entire process as user-friendly and ac
 
 For first time setup: [Directions for First Time Setup](#directions-for-first-time-setup)
 
-For information on Modules: [Sensors and Modules](#sensors-and-modules)
-
 For 3D printable enclosures: [3D Files](./3D%20Files/) or in a collection on [Printables.com](https://www.printables.com/@HenryLevesque/collections/1649941)
 
 ## Python File Explanation and Directions
@@ -22,14 +20,17 @@ File organization and Directions for how to use specific configurations.
 
 ### Python Files Overview
 
-#### collect_all.py
-Collects data using the camera (via libcamera-still), GPS, and temperature/humidity sensors. Use this for full environmental and location data collection.
-
 #### camera.py
 Collects data using only the camera module. Use this for image/video data collection without GPS.
 
 #### camera_gps.py
 Collects data using both the camera and GPS modules. Use this for synchronized image/video and location data collection.
+
+#### temperature_humidity.py
+Collects data from a dht11 or dht22 sensor. Use this for collecting digital temperature and humidity.
+
+#### camera_gps_temperature_humidity.py
+Collects data using the camera (via libcamera-still), GPS, and temperature/humidity sensors. Use this for full environmental and location data collection.
 
 ### How to Run
 
@@ -39,9 +40,10 @@ Collects data using both the camera and GPS modules. Use this for synchronized i
     ```
 2. Run the desired Python file:
     ```
-    python3 camera.py         # For camera-only data collection
-    python3 camera_gps.py     # For camera + GPS data collection
-    python3 collect_all.py    # For camera + GPS + temperature/humidity data collection
+    python3 camera.py                           # For camera-only data collection
+    python3 camera_gps.py                       # For camera + GPS data collection
+    python3 temperature_humidity.py             #  For temperature/humidity data collection
+    python3 camera_gps_temperature_humidity.py  # For camera + GPS + temperature/humidity data collection
     ```
 
 ## Sensors and Modules
@@ -52,15 +54,11 @@ Collects data using both the camera and GPS modules. Use this for synchronized i
 - Battery Module: PiSugar battery that enables wireless operation of the data collection device.
 
 ### Future Sensors and Modules
-- Temperature/Humidity Sensor: Measures ambient temperature and humidity for environmental monitoring.
 - Air Quality Sensor: Measures air quality parameters (e.g., particulate matter, VOCs, CO2) for pollution and health studies.
 - Microphone Module: Measures environmental noise levels for noise pollution data collection.
 - Heartrate Sensor: Measures heart rate to detect stress for biometric data collection.
-- Additional Air Quality Sensors: For more advanced pollution and health monitoring.
 
 ## Directions for First Time Setup
-
-## Step-by-Step Setup for Beginners
 
 ### 1. Flashing the microSD Card with Raspberry Pi OS
 
@@ -170,7 +168,7 @@ Collects data using both the camera and GPS modules. Use this for synchronized i
     ```
 2. Run the Python file:
     ```
-    python3 collect_camera_gps.py
+    python3 camera_gps.py
     ```
 
 ---
@@ -182,4 +180,3 @@ Replace `<local_file_path>` with the path to your file and `<raspberrypi_ip_addr
 
 ## License
 This project is licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
-
