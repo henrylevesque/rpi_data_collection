@@ -5,9 +5,7 @@ This is an open-source project for Data Collection based on low-cost Raspberry P
 Python-based code for collecting data on Raspberry Pi Zero 2 W from external sensors and writing it to an internal microSD card as an Excel file. 
 The code can be run through a simple terminal command outlined below.
 
-This device can be used as a modular biometric and environmental data collection device or as a standalone data collection device.
-
-The goal of this project is to make the entire process as user-friendly and accessible as possible.
+The goal of this project is to make the entire process as user-friendly and accessible as possible. Because the Raspberry Pi is a Single Board Computer (SBC) it allows for flexible configuration as a human-centered modular biometric data collection device, a modular environmental data collection device, or as a standalone data collection device configured specifically to the needs of your project. This repository is intended to be a jumping-off point for data collection using Raspberry Pi with an emphasis on producing human-readable data.
 
 ## Navigation
 
@@ -27,7 +25,7 @@ Collects data using only the camera module. Use this for image/video data collec
 Collects data using both the camera and GPS modules. Use this for synchronized image/video and location data collection.
 
 #### temperature_humidity.py
-Collects data from a dht11 or dht22 sensor. Use this for collecting digital temperature and humidity.
+Collects data from a DHT11 or DHT22 sensor. Use this for collecting digital temperature and humidity.
 
 #### camera_gps_temperature_humidity.py
 Collects data using the camera (via libcamera-still), GPS, and temperature/humidity sensors. Use this for full environmental and location data collection.
@@ -57,7 +55,7 @@ Collects data using the camera (via libcamera-still), GPS, and temperature/humid
 ### Future Sensors and Modules
 - Air Quality Sensor: Measures air quality parameters (e.g., particulate matter, VOCs, CO2) for pollution and health studies.
 - Microphone Module: Measures environmental noise levels for noise pollution data collection.
-- Heartrate Sensor: Measures heart rate to detect stress for biometric data collection.
+- Heart-rate Sensor: Measures heart rate to detect stress for biometric data collection.
 
 ## Directions for First Time Setup
 
@@ -125,7 +123,7 @@ Collects data using the camera (via libcamera-still), GPS, and temperature/humid
     ```
 3. Clone the repository:
     ```
-    git clone https://github.com/hleve/rpi_data_collection.git
+    git clone https://github.com/henrylevesque/rpi_data_collection.git
     cd rpi_data_collection
     ```
 
