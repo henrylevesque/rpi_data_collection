@@ -7,7 +7,7 @@ The code can be run through a simple terminal command outlined below.
 
 This device can be used as a modular biometric and environmental data collection device or as a standalone data collection device.
 
-The goal of this project is on making the entire process as user-friendly and accessible as possible.
+The goal of this project is to make the entire process as user-friendly and accessible as possible.
 
 ## Navigation
 
@@ -52,6 +52,7 @@ Collects data using the camera (via libcamera-still), GPS, and temperature/humid
 - GPS Module: Provides geotagging data for mapping in GIS applications.
 - Camera Module: Collects environmental data and facial data for later use with computer vision analysis.
 - Battery Module: PiSugar battery that enables wireless operation of the data collection device.
+- Temperature and Humidity sensor, either DHT11 or DHT22 sensors for collecting digital temperature and humidity.
 
 ### Future Sensors and Modules
 - Air Quality Sensor: Measures air quality parameters (e.g., particulate matter, VOCs, CO2) for pollution and health studies.
