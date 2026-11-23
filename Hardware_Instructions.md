@@ -126,7 +126,7 @@ If you use a different air quality sensor, refer to its datasheet for wiring. Mo
 ### Step 3: Software Setup
 1. Clone this repository to your Raspberry Pi:
     ```sh
-    git clone https://github.com/hleve/rpi_data_collection.git
+    git clone https://github.com/henrylevesque/rpi_data_collection.git
     cd project
     ```
 2. Install the required Python packages:
@@ -149,4 +149,4 @@ You should now have a fully assembled and functional Raspberry Pi Zero 2 W Data 
 Happy data collection!
 
 ####
-Note: Amazon purchase links have been removed. STL files for 3D printing are available on Printables.com. Please source electronics from your preferred supplier.
+Note: Additional STL files for 3D printing are available on Printables.com. Please source electronics from your preferred supplier.
