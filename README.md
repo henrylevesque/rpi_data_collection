@@ -55,7 +55,6 @@ Collects data using the camera (via libcamera-still), GPS, and temperature/humid
 ### Future Sensors and Modules
 - Air Quality Sensor: Measures air quality parameters (e.g., particulate matter, VOCs, CO2) for pollution and health studies.
 - Microphone Module: Measures environmental noise levels for noise pollution data collection.
-- Heart-rate Sensor: Measures heart rate to detect stress for biometric data collection.
 
 ## Directions for First Time Setup
 
@@ -99,7 +98,7 @@ Collects data using the camera (via libcamera-still), GPS, and temperature/humid
 ### 4. Connecting to the Raspberry Pi via SSH
 
 1. Open Terminal:
-    - On **Windows 10/11**: Use the built-in Windows Terminal or Command Prompt (no need to install PuTTY unless you prefer it)
+    - On **Windows 10/11**: Use the built-in Windows Terminal or Command Prompt
     - On **Mac**: Use the built-in Terminal app
     - On **Linux**: Use your system's Terminal
 2. Connect using:
@@ -108,7 +107,6 @@ Collects data using the camera (via libcamera-still), GPS, and temperature/humid
     ```
     - Replace `<raspberrypi_ip_address>` with the actual IP address or hostname
     - Enter the password you set in Raspberry Pi Imager
-    - **Note:** PuTTY is an alternative SSH client for Windows, but most users can use Windows Terminal or Command Prompt without installing extra software.
 
 ### 5. Cloning the Repository to Your Raspberry Pi
 
